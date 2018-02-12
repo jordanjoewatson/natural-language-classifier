@@ -1,6 +1,6 @@
 # language-expressions
 
-Experimenting with Neural Networks in python using NLP and supervised learning to try and classify strings of text using previous examples where there doesn't seem to be any obvious pattern to identify those that should be approved. A quasi regex that doesn't have a strict pattern to work from.
+Experimenting with Neural Networks in python using NLP and supervised learning to try and classify strings of text using previous examples where there doesn't seem to be any obvious pattern to identify those that should be approved. A quasi regex that works by learning from previous examples and not a strict pattern.
 
 A use may be to classify strings written by a certain user apart from those written by others
 
