@@ -1,18 +1,22 @@
 # language-expressions
 
-Experimenting with Neural Networks in python to try and create something that behaves similar to a regex but without knowing the specific pattern of characters even if one may or may not exist.
+Experimenting with Neural Networks in python using NLP and supervised learning to try and classify strings of text using previous examples where there doesn't seem to be any obvious pattern to identify those that should be approved. A quasi regex that doesn't have a strict pattern to work from.
 
-A use may be to classify strings written by a certain user.
-Another use may be to try and identify a scam email.
-Another use that may not be entirely useful could be to try and use these language expression idea to identify something that belongs to a regex.
+A use may be to classify strings written by a certain user apart from those written by others
+
+Another use may be to try and identify a scam email based on it's body or email subject.
 
 The input layers for the Neural Network will be split into three specific areas that eventually come together. These are characters, words, and meanings
 
 ## Requirements
 
 python3
+
 nltk
+
 spacy
+
+## Neural Network Design
 
 ### Characters
 
