@@ -4,12 +4,20 @@ from nltk.tokenize import sent_tokenize, word_tokenize, PunktSentenceTokenizer
 
 WORD_LENGTH = 100
 
-#CHANGE THESE NOT CORRECT
+# These should now hopefully be correct
 nounTags = ["NN","NNS","NNP","NNPS"]
 adjectiveTags = ["JJ","JJR","JJS"]
 pronounTags = ["PRP","PRP$","WP","WP$"]
 adverbTags = ["RB","RBS","RBR","WRB"]
 verbTags = ["VB","VBD","VBG","VBN","VBP","VBZ"]
+conjunctionTags = ["CC","IN"]
+determinerTags = ["DT","WDT"]
+digitTags = ["CD"]
+foreignTags = ["FW"]
+listTags = ["LS"]
+possessiveTags = ["POS"]
+toTags = ["TO"]
+interjectionTags = ["UH"]
 anonTags = [] #Don't need to define as else statement
 
 nounList = [0] * WORD_LENGTH
@@ -17,6 +25,14 @@ adjectiveList = [0] * WORD_LENGTH
 adverbList = [0] * WORD_LENGTH
 pronounList = [0] * WORD_LENGTH
 verbList = [0] * WORD_LENGTH
+conjunctionList = [0] * WORD_LENGTH
+determinerList = [0] * WORD_LENGTH
+digitList = [0] * WORD_LENGTH
+foreignList = [0] * WORD_LENGTH
+listList = [0] * WORD_LENGTH
+possessiveList = [0] * WORD_LENGTH
+toList = [0] * WORD_LENGTH
+interjectionList = [0] * WORD_LENGTH
 anonList = [0] * WORD_LENGTH
 
 def printLists():
@@ -25,24 +41,36 @@ def printLists():
   print(adverbList)
   print(pronounList)
   print(verbList)
+  print(conjunctionList)
+  print(determinerList)
+  print(digitList)
+  print(foreignList)
+  print(listList)
+  print(possessiveList)
+  print(toList)
+  print(interjectionList)
   print(anonList)
 
+
 def populateLists(speechTags):
-  print(speechTags)
   i = 0
   for tag in speechTags:
-    print(tag)
     if(tag in nounTags): nounList[i] = 1
     elif(tag in adjectiveTags): adjectiveList[i] = 1
     elif(tag in adverbTags): adverbList[i] = 1
     elif(tag in pronounTags): pronounList[i] = 1
     elif(tag in verbTags): verbList[i] = 1
+    elif(tag in conjunctionTags): conjunctionList[i] = 1
+    elif(tag in determinerTags): determinerList[i] = 1
+    elif(tag in digitTags): digitList[i] = 1
+    elif(tag in foreignTags): foreignList[i] = 1
+    elif(tag in listTags): listList[i] = 1
+    elif(tag in possessiveTags): possessiveList[i] = 1
+    elif(tag in toTags): toList[i] = 1
+    elif(tag in interjectionTags): interjectionList[i] = 1
     else: anonList[i] = 1
     i += 1 
 
-#print(nounList)
-#populateLists(["CC","CC","CD","CC","ASDASD",""])
-#print(nounList)
 
 tagList = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP",
            "PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","TO","UH","VB","VBD","VBG",
