@@ -26,7 +26,7 @@ The characters input node/s are concerned with the amount of each character that
 
 The words input node/s are concerned with things like the length of a string, types of words, more meta-data kind of analysis
 
-### Meanings
+### Meanings/Meta Semantics
 
 The meanings input node/s are concerned with trying to derive subtle meanings from the words with again meta-data analysis
 
