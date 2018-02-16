@@ -4,6 +4,11 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
+def wordList(text):
+  wordLs = []
+  for word in text.split(" "):
+    if(len(word) > 0): wordLs.append(word)
+  return wordLs
 
 def stringWithoutStopwords(text):
   stop_words = set(stopwords.words('english'))
@@ -38,7 +43,7 @@ def stringLength(text):
 def capitaliseWords(text):
   return text.title()
 
-capitaliseWords("capitales this please?")
-stringLength("what is the length of this strings?")
-percentageWithoutStopwords("Get the perceptage of words without stopwords to string with them")
+#capitaliseWords("capitales this please?")
+#stringLength("what is the length of this strings?")
+#percentageWithoutStopwords("Get the perceptage of words without stopwords to string with them")
 
