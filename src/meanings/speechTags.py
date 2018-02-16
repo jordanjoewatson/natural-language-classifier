@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize, PunktSentenceTokenizer
+from sys import path
+path.insert(0, '../words/')
+from wordAnalysis import wordCount
 
 WORD_LENGTH = 100
 
@@ -107,9 +110,12 @@ def speechTagDict(text):
     dict[tuple[1]] += 1
   return dict
 
+def nounPercentage():
+  
 
 dictTags = speechTagDict("This is a test")
 
 textTagLs = getTagList(speechTagging("THIS IS a test example haha how are you?"))
 populateLists(textTagLs)
 printLists()
+print(dictTags)
