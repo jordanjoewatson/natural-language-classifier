@@ -1,11 +1,23 @@
 #!/usr/bin/python3
 import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize, PunktSentenceTokenizer
-from sys import path
-path.insert(0, '../words/')
-from wordAnalysis import wordCount
 
 WORD_LENGTH = 100
+
+nounSum = 0
+adjectiveSum = 0
+pronounSum = 0
+adverbSum = 0
+verbSum = 0
+conjunctionSum = 0
+determinerSum = 0
+digitSum = 0
+foreignSum = 0
+listSum = 0
+posSum = 0
+toSum = 0
+interjectionSum = 0
+anonSum = 0
 
 # These should now hopefully be correct
 nounTags = ["NN","NNS","NNP","NNPS"]
@@ -38,6 +50,12 @@ toList = [0] * WORD_LENGTH
 interjectionList = [0] * WORD_LENGTH
 anonList = [0] * WORD_LENGTH
 
+#Finish for debugging?
+def printSums():
+  print(nounSum)
+  print(adjectiveSum)
+  print(adverbSum)
+
 def printLists():
   print(nounList)
   print(adjectiveList)
@@ -54,24 +72,90 @@ def printLists():
   print(interjectionList)
   print(anonList)
 
+def resetSums():
+  global nounSum, adjectiveSum, adverbSum, pronounSum, verbSum, conjunctionSum, determinerSum
+  global anonSum, digitSum, foreignSum, listSum, posSum, toSum, interjectionSum
+  nounSum = 0
+  adjectiveSum = 0
+  adverbSum = 0
+  pronounSum = 0
+  verbSum = 0
+  conjunctionSum = 0
+  determinerSum = 0
+  digitSum = 0
+  foreignSum = 0
+  listSum = 0
+  posSum = 0
+  toSum = 0
+  interjectionSum = 0
+  anonSum = 0
+
+def resetLists():
+  global nounList, adjectiveList, adverbList, pronounList, verbList, conjunctionList
+  global determinerList, digitList, foreignList, listList, possessiveList, toList
+  global interjectionList, anonList
+  nounList = [0] * WORD_LENGTH
+  adjectiveList = [0] * WORD_LENGTH
+  adverbList = [0] * WORD_LENGTH
+  pronounList = [0] * WORD_LENGTH
+  verbList = [0] * WORD_LENGTH
+  conjunctionList = [0] * WORD_LENGTH
+  determinerList = [0] * WORD_LENGTH
+  digitList = [0] * WORD_LENGTH
+  foreignList = [0] * WORD_LENGTH
+  listList = [0] * WORD_LENGTH
+  possessiveList = [0] * WORD_LENGTH
+  toList = [0] * WORD_LENGTH
+  interjectionList = [0] * WORD_LENGTH
+  anonList = [0] * WORD_LENGTH
 
 def populateLists(speechTags):
+  global nounSum, adjectiveSum, adverbSum, pronounSum, verbSum, conjunctionSum, determinerSum
+  global anonSum, digitSum, foreignSum, listSum, posSum, toSum, interjectionSum
   i = 0
   for tag in speechTags:
-    if(tag in nounTags): nounList[i] = 1
-    elif(tag in adjectiveTags): adjectiveList[i] = 1
-    elif(tag in adverbTags): adverbList[i] = 1
-    elif(tag in pronounTags): pronounList[i] = 1
-    elif(tag in verbTags): verbList[i] = 1
-    elif(tag in conjunctionTags): conjunctionList[i] = 1
-    elif(tag in determinerTags): determinerList[i] = 1
-    elif(tag in digitTags): digitList[i] = 1
-    elif(tag in foreignTags): foreignList[i] = 1
-    elif(tag in listTags): listList[i] = 1
-    elif(tag in possessiveTags): possessiveList[i] = 1
-    elif(tag in toTags): toList[i] = 1
-    elif(tag in interjectionTags): interjectionList[i] = 1
-    else: anonList[i] = 1
+    if(tag in nounTags): 
+      nounList[i] = 1
+      nounSum += 1
+    elif(tag in adjectiveTags): 
+      adjectiveList[i] = 1
+      adjectiveSum += 1
+    elif(tag in adverbTags): 
+      adverbList[i] = 1
+      adverbSum += 1
+    elif(tag in pronounTags): 
+      pronounList[i] = 1
+      pronounSum += 1
+    elif(tag in verbTags): 
+      verbList[i] = 1
+      verbSum += 1
+    elif(tag in conjunctionTags): 
+      conjunctionList[i] = 1
+      conjunctionSum += 1
+    elif(tag in determinerTags): 
+      determinerList[i] = 1
+      determinerSum += 1
+    elif(tag in digitTags): 
+      digitList[i] = 1
+      digitSum += 1
+    elif(tag in foreignTags): 
+      foreignList[i] = 1
+      foreignSum += 1
+    elif(tag in listTags):
+      listList[i] = 1
+      listSum += 1
+    elif(tag in possessiveTags):
+      possessiveList[i] = 1
+      posSum += 1
+    elif(tag in toTags): 
+      toList[i] = 1
+      toSum += 1
+    elif(tag in interjectionTags):
+      interjectionList[i] = 1
+      interjectionSum += 1
+    else: 
+      anonList[i] = 1
+      anonSum += 1
     i += 1 
 
 
@@ -92,15 +176,17 @@ def getTagList(tuples):
 #creates a tuple list of words and their tags from the text
 #converts "This is a sentence" to ("This","DT"),...
 def speechTagging(text):
+  tags = []
   custom_tokenizer = PunktSentenceTokenizer(text)
   tokenized = custom_tokenizer.tokenize(text)
   try:
     for i in tokenized:
       words = nltk.word_tokenize(i)
       tagged = nltk.pos_tag(words)
-      return(tagged)
+      tags += tagged 
   except Exception as e:
     print(str(e))
+  return tags
 
 #creates a dictionary of recurrance of speech tags in text
 def speechTagDict(text):
@@ -110,12 +196,99 @@ def speechTagDict(text):
     dict[tuple[1]] += 1
   return dict
 
-def nounPercentage():
-  
+def nounPercentage(wordCount):
+  return(nounSum/wordCount)
 
-dictTags = speechTagDict("This is a test")
+def verbPercentage(wordCount):
+  return(verbSum/wordCount)  
 
-textTagLs = getTagList(speechTagging("THIS IS a test example haha how are you?"))
-populateLists(textTagLs)
-printLists()
-print(dictTags)
+def adjPercentage(wordCount):
+  return(adjectiveSum/wordCount)
+
+def adverbPercentage(wordCount):
+  return(adverbSum/wordCount)
+
+def pronounPercentage(wordCount):
+  return(pronounSum/wordCount)
+
+def conjunctionPercentage(wordCount):
+  return(conjunctionSum/wordCount)
+
+def digitPercentage(wordCount):
+  return(digitSum/wordCount)
+
+def possessivePercentage(wordCount):
+  return(posSum/wordCount)
+
+def foreignPercentage(wordCount):
+  return(foreignSum/wordCount)
+
+def listPercentage(wordCount):
+  return(listSum/wordCount)
+
+def toPercentage(wordCount):
+  return(toSum/wordCount)
+
+def determinerPercentage(wordCount):
+  return(determinerSum/wordCount)
+
+def interjectionPercentage(wordCount):
+  return(interjectionSum/wordCount)
+
+def anonPercentage(wordCount):
+  return(anonSum/wordCount)
+
+def getNounList():
+  return nounList
+
+def getDeterminerList():
+  return determinerList
+
+def getPossessiveList():
+  return possessiveList
+
+def getAdjectiveList():
+  return adjectiveList
+
+def getAdverbList():
+  return adverbList
+
+def getVerbList():
+  return verbList
+
+def getPronounList():
+  return pronounList
+
+def getConjunctionList():
+  return conjunctionList
+
+def getDigitList():
+  return digitList
+
+def getForeignList():
+  return foreignList
+
+def getListList():
+  return listList
+
+def getToList():
+  return toList
+
+def getInterjectionList():
+  return interjectionList
+
+def getAnonList():
+  return anonList
+
+#Finish off the rest
+
+#dictTags = speechTagDict("This is a test")
+
+def updateTags(text):
+  resetLists()
+  resetSums()
+  textTagLs = getTagList(speechTagging(text))
+  populateLists(textTagLs)
+
+#textTagLs = getTagList(speechTagging("THIS IS a test example haha how are you?"))
+#populateLists(textTagLs)
