@@ -6,13 +6,9 @@ from meanings import speechTags as speech
 from meanings import entityAnalysis as entities
 
 
-def test(s): 
+def convertText(text): 
 
   ls = []
-
-  text = "The tall man ran towards the dark cold house. Hello, today I went to the shop, the shop was in the borough of Paddington in London, was that really today? I completely forgot! I thought that was yesterday, oh but maybe it was, perhaps I need to write a diary, this is some English lorem ipsum text example, just some stupid bullshit to test out my ideas! Yeah, you understand? Bonjour madame, commen't tu t'appele. Jardin Francais This is a really big house, it's huge! It was a very warm day for the beautiful human, they gracefully ran towards the cold and dark house that sat precariously on the edge of a tall cliff"
-  text = "The talll man ran towards the dark cold house while the sun shon brightly on the opening to the dark lonely cave. The blind man sat calmly waiting for the time that would result in a beautifully executed something"
-  #text = s
 
   wordsLs = words.wordList(text)
 
@@ -93,5 +89,4 @@ def test(s):
   ls += (posList + anonList) 
   #print(len(ls))
   #print(ls)
-
-test("test sentence")
+  return ls
