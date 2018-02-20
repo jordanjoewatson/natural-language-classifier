@@ -7,9 +7,12 @@ from meanings import entityAnalysis as entities
 
 
 def test(s): 
+
+  ls = []
+
   text = "The tall man ran towards the dark cold house. Hello, today I went to the shop, the shop was in the borough of Paddington in London, was that really today? I completely forgot! I thought that was yesterday, oh but maybe it was, perhaps I need to write a diary, this is some English lorem ipsum text example, just some stupid bullshit to test out my ideas! Yeah, you understand? Bonjour madame, commen't tu t'appele. Jardin Francais This is a really big house, it's huge! It was a very warm day for the beautiful human, they gracefully ran towards the cold and dark house that sat precariously on the edge of a tall cliff"
   text = "The talll man ran towards the dark cold house while the sun shon brightly on the opening to the dark lonely cave. The blind man sat calmly waiting for the time that would result in a beautifully executed something"
-  text = s
+  #text = s
 
   wordsLs = words.wordList(text)
 
@@ -20,28 +23,25 @@ def test(s):
   stringLength = words.stringLength(text)
   averageSyllables = syllables.averageSyllables(text)
 
-  print(wordCount)
-  print(avgWordLength)
-  print(stringLength)
-  print(averageSyllables)
-
-  print(stopwordsPercent)  
+  ls.append(wordCount)
+  ls.append(stopwordsPercent)
+  ls.append(avgWordLength)
+  ls.append(stringLength)
+  ls.append(averageSyllables)
 
   #CHARACTER ANALYSIS
   charDict = chars.updateDict(text)
   firstCharDict = chars.updateFirstChar(wordsLs)
   consecutiveCharDict = chars.updateConsecutiveChar(text)
 
-  print(charDict)
-  print(firstCharDict)
-  print(consecutiveCharDict)
+  ls += charDict + firstCharDict + consecutiveCharDict
 
   #METASEMANTICS ANALYSIS
   alphaPercent = entities.alphaPercentage(text,wordCount)
   entityPercent = entities.entityPercentage(text,wordCount)
 
-  print(alphaPercent)
-  print(entityPercent)  
+  ls.append(alphaPercent)
+  ls.append(entityPercent)
 
   speech.updateTags(text)
   nounPercent = speech.nounPercentage(wordCount)
@@ -58,20 +58,20 @@ def test(s):
   adverbPercent = speech.adverbPercentage(wordCount)
   determinerPercent = speech.determinerPercentage(wordCount)
   anonPercent = speech.anonPercentage(wordCount)
-  print((verbPercent))
-  print((nounPercent))
-  print((adjPercent))
-  print((pronounPercent))
-  print((conjunctionPercent))
-  print((digitPercent))
-  print((foreignPercent))
-  print((listPercent))
-  print((toPercent))
-  print((interjectionPercent))
-  print((determinerPercent))
-  print((possessivePercent))
-  print((adverbPercent))
-  print((anonPercent)) 
+  ls.append(verbPercent)
+  ls.append(nounPercent)
+  ls.append(adjPercent)
+  ls.append(pronounPercent)
+  ls.append(conjunctionPercent)
+  ls.append(digitPercent)
+  ls.append(foreignPercent)
+  ls.append(listPercent)
+  ls.append(toPercent)
+  ls.append(interjectionPercent)
+  ls.append(determinerPercent)
+  ls.append(possessivePercent)
+  ls.append(adverbPercent)
+  ls.append(anonPercent)
 
   nounList = speech.getNounList()
   verbList = speech.getVerbList()  
@@ -87,20 +87,11 @@ def test(s):
   determinerList = speech.getDeterminerList()
   posList = speech.getPossessiveList()
   anonList = speech.getAnonList()
-  
-  print(adjList)
-  print(pronounList)
-  print(nounList)
-  print(verbList)
-  print(conjunctionList)
-  print(digitList)
-  print(adverbList)
-  print(foreignList)
-  print(listList)
-  print(toList)
-  print(interjectionList)
-  print(determinerList)
-  print(posList)
-  print(anonList)
+ 
+  ls += (adjList + pronounList + nounList + verbList + conjunctionList + digitList)
+  ls += (adverbList + foreignList + listList + toList + interjectionList + determinerList)
+  ls += (posList + anonList) 
+  #print(len(ls))
+  #print(ls)
 
 test("test sentence")
