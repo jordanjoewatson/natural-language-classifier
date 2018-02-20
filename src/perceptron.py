@@ -1,12 +1,6 @@
 #!/usr/local/bin/python3
 from sys import exit
 from network.activation import sigmoid, tanh, sign
-#sum()
-#
-
-#Removes first element from list and returns it
-def deque(l):
-  return
 
 def Σ(xs,ws):
   ls = []
@@ -23,7 +17,7 @@ def Δw(xs,ws,answer,ε):
   return weights
  
 
-def train(tDataLs,tResultLs,weights,σ):
+def tr(tDataLs,tResultLs,weights,σ):
   #could add check before train to check size of all lists
   print("weights: "+ str(weights))
   tData = None
@@ -42,6 +36,10 @@ def train(tDataLs,tResultLs,weights,σ):
     Δweights = Δw(tData,weights,tResult,ε)
     train(tDataLs,tResultLs,Δweights,σ)
 
+def train(tData,tResult,weights,σ):
+  ε = σ(Σ(tData,weights))
+  if(ε == tResult): return weights
+  else:
+    Δweights = Δw(tData,weights,tResult,ε)
+    return tr(tData,tResult,Δweights,σ)
 
-train([[40,45],[20,105],[-24,63],[302,-4],[-24,-59]],[1,1,1,-1,-1],[1,1],sign)
-train([[40,45],[20,105],[-24,63],[302,-4],[-24,-59]],[1,1,1,-1,-1],[1,2],sign)
