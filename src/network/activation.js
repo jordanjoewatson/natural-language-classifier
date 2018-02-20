@@ -2,8 +2,15 @@
 import numpy as np
 from math import exp as e
 
-LEAKY = 0.01
+'''
+could write functions such as 
+def tanh(x,deriv):
+  if(deriv): return deriv
+  else: return nonderiv
 
+'''
+LEAKY = 0.01
+LEAKY_CAP = 20
 '''
 Could add a higher learning rate for when the gradient is very low or very high
   to adjust the vanishing gradient problem
@@ -56,6 +63,12 @@ def sigmoidPrime(x):
 
 def leakyReLU(x):
   if(x > 0): return max(0,x)
+  else: return LEAKY*x
+
+#Alternative implementation of leakyReLU to have a maximum value 
+def leakyReLU(x):
+  if(x > 0 and x < LEAKY_CAP): return x
+  elif(x > 0): return LEAKY_CAP
   else: return LEAKY*x
 
 def leakyReLUPrime(x):
