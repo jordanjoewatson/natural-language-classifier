@@ -15,7 +15,10 @@ def Δw(xs,ws,answer,ε):
   for map_item,weight in zip(mapLs,ws):
     weights.append(map_item+weight)
   return weights
- 
+
+def Δθ(answer,ε,θ):
+  Δθp = answer - ε
+  return (θ + Δθp)
 
 def tr(tDataLs,tResultLs,weights,σ):
   #could add check before train to check size of all lists
@@ -30,16 +33,20 @@ def tr(tDataLs,tResultLs,weights,σ):
   else: tData = tDataLs
 
   ε = σ(Σ(tData,weights))
-  if(ε == tResult): 
+  if(ε == tResult):
     train(tDataLs[1:],tResultLs[1:],weights,σ)
   else:
     Δweights = Δw(tData,weights,tResult,ε)
     train(tDataLs,tResultLs,Δweights,σ)
 
-def train(tData,tResult,weights,σ):
-  ε = σ(Σ(tData,weights))
-  if(ε == tResult): return weights
+def train(tData,tResult,weights,σ,θ):
+  ε = σ(Σ(tData,weights) + θ)
+  if(ε == tResult): return (weights,θ)
   else:
     Δweights = Δw(tData,weights,tResult,ε)
-    return tr(tData,tResult,Δweights,σ)
+    Δbias = Δθ(tResult,ε,θ)
+    return train(tData,tResult,Δweights,σ,Δbias)
 
+def compute(data,result,weights,σ,θ):
+  if((σ(Σ(data,weights) + θ)) == result): return True
+  else: return False

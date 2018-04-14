@@ -2,7 +2,7 @@
 import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize, PunktSentenceTokenizer
 
-WORD_LENGTH = 100
+WORD_LENGTH = 250
 
 nounSum = 0
 adjectiveSum = 0

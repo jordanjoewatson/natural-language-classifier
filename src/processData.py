@@ -6,23 +6,28 @@ from meanings import speechTags as speech
 from meanings import entityAnalysis as entities
 
 
-def convertText(text): 
+def convertText(text):
 
   ls = []
 
-  wordsLs = words.wordList(text)
 
+  wordsLs = words.wordList(text)
+  
   #WORD ANALYSIS
   wordCount = words.wordCount(text)
+
   stopwordsPercent = words.percentageWithoutStopwords(text)
+
   avgWordLength = words.avgWordLen(text)
+
+
   stringLength = words.stringLength(text)
   averageSyllables = syllables.averageSyllables(text)
 
   ls.append(wordCount)
   ls.append(stopwordsPercent)
   ls.append(avgWordLength)
-  ls.append(stringLength)
+  #ls.append(stringLength)
   ls.append(averageSyllables)
 
   #CHARACTER ANALYSIS
@@ -30,7 +35,7 @@ def convertText(text):
   firstCharDict = chars.updateFirstChar(wordsLs)
   consecutiveCharDict = chars.updateConsecutiveChar(text)
 
-  ls += charDict + firstCharDict + consecutiveCharDict
+  ls += charDict + firstCharDict# + consecutiveCharDict
 
   #METASEMANTICS ANALYSIS
   alphaPercent = entities.alphaPercentage(text,wordCount)
@@ -70,7 +75,7 @@ def convertText(text):
   ls.append(anonPercent)
 
   nounList = speech.getNounList()
-  verbList = speech.getVerbList()  
+  verbList = speech.getVerbList()
   adjList = speech.getAdjectiveList()
   pronounList = speech.getPronounList()
   conjunctionList = speech.getConjunctionList()
@@ -83,10 +88,10 @@ def convertText(text):
   determinerList = speech.getDeterminerList()
   posList = speech.getPossessiveList()
   anonList = speech.getAnonList()
- 
+
   ls += (adjList + pronounList + nounList + verbList + conjunctionList + digitList)
   ls += (adverbList + foreignList + listList + toList + interjectionList + determinerList)
-  ls += (posList + anonList) 
+  ls += (posList + anonList)
   #print(len(ls))
   #print(ls)
   return ls

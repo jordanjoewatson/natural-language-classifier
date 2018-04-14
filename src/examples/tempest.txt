@@ -1,0 +1,194 @@
+#1T
+Boatswain!
+
+#2T
+Here, master: what cheer?
+
+#3T
+Good, speak to the mariners: fall to't, yarely, or we run ourselves aground: bestir, bestir.
+
+#4T
+Heigh, my hearts! cheerly, cheerly, my hearts! yare, yare! Take in the topsail. Tend to the master's whistle. Blow, till thou burst thy wind, if room enough!
+
+#5T
+Good boatswain, have care. Where's the master?
+
+#6T
+I pray now, keep below.
+
+#7T
+Where is the master, boatswain?
+
+#8T
+Do you not hear him? You mar our labour: keep your cabins: you do assist the storm.
+
+#9T
+Nay, good, be patient.
+
+#10T
+When the sea is. Hence! What cares these roarers for the name of king? To cabin: silence! trouble us not.
+
+#11T
+Good, yet remember whom thou hast aboard.
+
+#12T
+None that I more love than myself. You are a counsellor; if you can command these elements to silence, and work the peace of the present, we will not hand a rope more; use your authority: if you cannot, give thanks you have lived so long, and make yourself ready in your cabin for the mischance of the hour, if it so hap. Cheerly, good hearts! Out of our way, I say.
+
+#13T
+I have great comfort from this fellow: methinks he hath no drowning mark upon him; his complexion is perfect gallows. Stand fast, good Fate, to his hanging: make the rope of his destiny our cable, for our own doth little advantage. If he be not born to be hanged, our case is miserable.
+
+#14T
+Down with the topmast! yare! lower, lower! Bring her to try with main-course.
+
+#15T
+A plague upon this howling! they are louder than the weather or our office.
+
+#16T
+Yet again! what do you here? Shall we give o'er and drown? Have you a mind to sink?
+
+#17T
+A pox o' your throat, you bawling, blasphemous, incharitable dog!
+
+#18T
+Work you then.
+
+#19T
+Hang, cur! hang, you whoreson, insolent noisemaker! We are less afraid to be drowned than thou art.
+
+#20T
+I'll warrant him for drowning; though the ship were no stronger than a nutshell and as leaky as an unstanched wench.
+
+#21T
+Lay her a-hold, a-hold! set her two courses off to sea again; lay her off.
+
+#22T
+All lost! to prayers, to prayers! all lost!
+
+#23T
+What, must our mouths be cold?
+
+#24T
+The king and prince at prayers! let's assist them, For our case is as theirs.
+
+#25T
+I'm out of patience.
+
+#26T
+We are merely cheated of our lives by drunkards: This wide-chapp'd rascal--would thou mightst lie drowning The washing of ten tides!
+
+#27T
+He'll be hang'd yet, Though every drop of water swear against it And gape at widest to glut him.
+
+#28T
+Let's all sink with the king.
+
+#29T
+Let's take leave of him.
+
+#30T
+Now would I give a thousand furlongs of sea for an acre of barren ground, long heath, brown furze, any thing. The wills above be done! but I would fain die a dry death.
+
+#31T
+If by your art, my dearest father, you have Put the wild waters in this roar, allay them.
+
+#32T
+The sky, it seems, would pour down stinking pitch, But that the sea, mounting to the welkin's cheek, Dashes the fire out.
+
+#33T
+O, I have suffered With those that I saw suffer: a brave vessel, Who had, no doubt, some noble creature in her, Dash'd all to pieces.
+
+#34T
+O, the cry did knock Against my very heart.
+
+#35T
+Poor souls, they perish'd.
+
+#36T
+Had I been any god of power, I would Have sunk the sea within the earth or ere It should the good ship so have swallow'd and The fraughting souls within her.
+
+#37T
+Be collected: No more amazement: tell your piteous heart There's no harm done.
+
+#38T
+O, woe the day!
+
+#39T
+No harm.
+
+#40T
+I have done nothing but in care of thee, Of thee, my dear one, thee, my daughter, who Art ignorant of what thou art, nought knowing Of whence I am, nor that I am more better Than Prospero, master of a full poor cell, And thy no greater father.
+
+#41T
+More to know Did never meddle with my thoughts.
+
+#42T
+'Tis time I should inform thee farther.
+
+#43T
+Lend thy hand, And pluck my magic garment from me.
+
+#44T
+Lie there, my art.
+
+#45T
+Wipe thou thine eyes; have comfort.
+
+#46T
+The direful spectacle of the wreck, which touch'd The very virtue of compassion in thee, I have with such provision in mine art So safely ordered that there is no soul-- No, not so much perdition as an hair Betid to any creature in the vessel Which thou heard'st cry, which thou saw'st sink.
+
+#47T
+Sit down; For thou must now know farther.
+
+#48T
+You have often Begun to tell me what I am, but stopp'd And left me to a bootless inquisition, Concluding 'Stay: not yet.'
+
+#49T
+The hour's now come; The very minute bids thee ope thine ear; Obey and be attentive.
+
+#50T
+Canst thou remember A time before we came unto this cell? I do not think thou canst, for then thou wast not Out three years old.
+
+#51
+Certainly, sir, I can.
+
+#52
+By what? by any other house or person? Of any thing the image tell me that Hath kept with thy remembrance.
+
+#53
+'Tis far off And rather like a dream than an assurance That my remembrance warrants.
+
+#54
+Had I not Four or five women once that tended me?
+
+#55
+Thou hadst, and more, Miranda.
+
+#56
+But how is it That this lives in thy mind?
+
+#57
+What seest thou else In the dark backward and abysm of time? If thou remember'st aught ere thou camest here, How thou camest here thou mayst.
+
+#58
+But that I do not.
+
+#59
+Twelve year since, Miranda, twelve year since, Thy father was the Duke of Milan and A prince of power.
+
+#60
+Sir, are not you my father?
+
+#61
+Thy mother was a piece of virtue, and She said thou wast my daughter; and thy father Was Duke of Milan; and thou his only heir And princess no worse issued.
+
+#62
+O the heavens!
+
+#63
+What foul play had we, that we came from thence?
+
+#64
+Or blessed was't we did?
+
+#65
+Both, both, my girl: By foul play, as thou say'st, were we heaved thence, But blessedly holp hither.

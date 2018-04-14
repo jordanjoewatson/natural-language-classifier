@@ -74,3 +74,6 @@ After writing training examples this is how you write the tests that will be use
 When testing against two different files the files need to have the same amount of training data
 
 See the example directory for examples and something to use to run the classifier
+
+
+
