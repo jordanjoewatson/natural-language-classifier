@@ -1,6 +1,5 @@
 #!/usr/local/bin/python3
 from sys import exit
-from network.activation import sigmoid, tanh, sign
 
 def Σ(xs,ws):
   ls = []
@@ -19,25 +18,6 @@ def Δw(xs,ws,answer,ε):
 def Δθ(answer,ε,θ):
   Δθp = answer - ε
   return (θ + Δθp)
-
-def tr(tDataLs,tResultLs,weights,σ):
-  #could add check before train to check size of all lists
-  print("weights: "+ str(weights))
-  tData = None
-  tResult = None
-
-  if(not tDataLs or not tResultLs): exit()
-  if(isinstance(tResultLs,list)): tResult = tResultLs[0]
-  else: tResult = tResultLs
-  if(isinstance(tDataLs[0],list)): tData = tDataLs[0]
-  else: tData = tDataLs
-
-  ε = σ(Σ(tData,weights))
-  if(ε == tResult):
-    train(tDataLs[1:],tResultLs[1:],weights,σ)
-  else:
-    Δweights = Δw(tData,weights,tResult,ε)
-    train(tDataLs,tResultLs,Δweights,σ)
 
 def train(tData,tResult,weights,σ,θ):
   ε = σ(Σ(tData,weights) + θ)

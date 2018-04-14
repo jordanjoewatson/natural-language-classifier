@@ -55,10 +55,8 @@ else:
 #write weights to file
 #read weights from file
 
-
-
-file_one_list = text_to_data("examples/meditations.txt") #two.txt
-file_two_list = text_to_data("examples/leviathan.txt") #on_libert.txt
+file_one_list = text_to_data(txt_file_one) #two.txt
+file_two_list = text_to_data(txt_file_two) #on_libert.txt
 
 file_one_training = file_one_list[0]
 file_two_training = file_two_list[0]

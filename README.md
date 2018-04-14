@@ -30,7 +30,7 @@ Has been able to classify sentences from the following texts
 
 95% Success Rate comparing Thomas Hobbes - Leviathan && Rene Descartes - Meditations
 
-95% Success Rate comparing John Stuart Mill - On Liberty && Shakespeare - The Tempest
+77% Success Rate comparing John Stuart Mill - On Liberty && Shakespeare - The Tempest
 
 77% Success Rate comparing John Stuart Mill - On Liberty && John Stuart Mill - Utilitarianism
 
@@ -61,7 +61,7 @@ python3 nlc.py -it file_one.txt file_two.txt -e 1000 -t 0.8 -p 10 -b 7
 To write files containing data to test it needs to be in the format of
 
 ```
-#1T 
+#1T
 This is the first training example that will be tested and alter the weights with.
 
 #2T
@@ -75,5 +75,4 @@ When testing against two different files the files need to have the same amount 
 
 See the example directory for examples and something to use to run the classifier
 
-
-
+The classifier is currently set up to allow a maximum of 250 words per sentence, can be altered in the source in words, characters and meanings directory files
