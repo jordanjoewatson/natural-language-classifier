@@ -29,7 +29,9 @@ The meanings inputs are concerned with trying to derive subtle meanings from the
 Has been able to classify sentences from the following texts
 
 95% Success Rate comparing Thomas Hobbes - Leviathan && Rene Descartes - Meditations
+
 95% Success Rate comparing John Stuart Mill - On Liberty && Shakespeare - The Tempest
+
 77% Success Rate comparing John Stuart Mill - On Liberty && John Stuart Mill - Utilitarianism
 
 ## Usage
@@ -70,3 +72,5 @@ After writing training examples this is how you write the tests that will be use
 ```
 
 When testing against two different files the files need to have the same amount of training data
+
+See the example directory for examples and something to use to run the classifier
