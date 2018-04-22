@@ -4,6 +4,7 @@ from words import syllableAnalysis as syllables
 from characters import characterAnalysis as chars
 from meanings import speechTags as speech
 from meanings import entityAnalysis as entities
+from meanings import sentimentAnalysis as sentiment
 
 
 def convertText(text):
@@ -12,7 +13,7 @@ def convertText(text):
 
 
   wordsLs = words.wordList(text)
-  
+
   #WORD ANALYSIS
   wordCount = words.wordCount(text)
 
@@ -92,6 +93,10 @@ def convertText(text):
   ls += (adjList + pronounList + nounList + verbList + conjunctionList + digitList)
   ls += (adverbList + foreignList + listList + toList + interjectionList + determinerList)
   ls += (posList + anonList)
-  #print(len(ls))
-  #print(ls)
+
+  sentiment_ls = sentiment.sentiment_analysis(text)
+  ls.append(sentiment_ls[0])
+  ls.append(sentiment_ls[1])
+
+
   return ls
