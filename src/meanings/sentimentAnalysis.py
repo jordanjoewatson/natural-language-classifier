@@ -3,19 +3,6 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
-'''
-def getPolarity(text):
-  polarity = TextBlob(text).polarity
-  print(polarity)
-  return (((polarity + 1) * 10) / 2);
-
-
-def getSubjectivity(text):
-	analysis = TextBlob(inputString)
-    return TextBlob(text).subjectivity
-	return analysis.subjectivity*10 #normalize data to 0..10
-'''
-
 def normalize(value):
   return ((value + 1) / 2)
 
