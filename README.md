@@ -10,6 +10,10 @@ nltk
 
 spacy
 
+textblob
+
+vadersentiment
+
 ## Analysis
 
 ### Characters
