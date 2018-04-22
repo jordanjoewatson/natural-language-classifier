@@ -30,7 +30,7 @@ Has been able to classify sentences from the following texts
 
 95% Success Rate comparing Thomas Hobbes - Leviathan && Rene Descartes - Meditations
 
-77% Success Rate comparing John Stuart Mill - On Liberty && Shakespeare - The Tempest
+80% Success Rate comparing John Stuart Mill - On Liberty && Shakespeare - The Tempest
 
 77% Success Rate comparing John Stuart Mill - On Liberty && John Stuart Mill - Utilitarianism
 
